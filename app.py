@@ -13,7 +13,7 @@ st.set_page_config(
 
 def fetch_poster(movie_id):
     response = requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}',params={'api_key': TMDB_API_KEY,'language': 'en-US'})
-    data = responce.json()
+    data = response.json()
     poster_path = data.get('poster_path')
     if poster_path:
         return "https://image.tmdb.org/t/p/original/" + poster_path
