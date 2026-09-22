@@ -2,7 +2,9 @@ import streamlit as st
 import pandas as pd
 import pickle
 import requests
+import os
 
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 st.set_page_config(
     page_title="Movie Recommendation System",
     page_icon="uv.png",
@@ -10,7 +12,7 @@ st.set_page_config(
 )
 
 def fetch_poster(movie_id):
-    responce = requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}?api_key=988d5a318cb43df6cc566424cc1b615d&language=en-US')
+    response = requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}',params={'api_key': TMDB_API_KEY,'language': 'en-US'})
     data = responce.json()
     poster_path = data.get('poster_path')
     if poster_path:
