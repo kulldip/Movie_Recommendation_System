@@ -1,9 +1,5 @@
 .venv
 venv
-tmdb_5000_movies.csv
-tmdb_5000_credits.csv
-Untitled.ipynb
 Procfile
 setup.sh
 .ipynb_checkpoints
-similarity.pkl
